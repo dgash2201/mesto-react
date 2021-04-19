@@ -1,0 +1,9 @@
+.card__description {
+  color: black;
+  width: 100%;
+  max-width: 246px;
+  margin: 22px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
