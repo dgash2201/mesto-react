@@ -26,7 +26,7 @@ export default function Card({ card, onCardClick, onCardLike, onCardDelete }) {
 
   return (
     <li className="card">
-      <img className="card__image" src={card.link} alt="Карачаевск" onClick={handleCardClick}/>
+      <img className="card__image" src={card.link} alt={card.name} onClick={handleCardClick}/>
       <button className={cardRemoveButtonClassName} onClick={handleDeleteClick}></button> 
       <div className="card__description">
         <h2 className="card__title">{card.name}</h2>
