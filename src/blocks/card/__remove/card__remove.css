@@ -12,6 +12,10 @@
   border: none;
 }
 
+.card__remove_hidden {
+  display: none;
+}
+
 .card__remove:hover {
   opacity: .6;
 }

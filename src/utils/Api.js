@@ -77,6 +77,15 @@ export class Api {
     .then(this._checkResponse);
   }
 
+  changeLikeCardStatus(id, isLiked) {
+    const method = isLiked ? 'DELETE' : 'PUT';
+    return fetch(`${this._baseUrl}/cards/likes/${id}`, {
+      method: method,
+      headers: this._headers,
+    })
+    .then(this._checkResponse);
+  }
+
   _checkResponse(res) {
     if (res.ok) {
       return res.json();
