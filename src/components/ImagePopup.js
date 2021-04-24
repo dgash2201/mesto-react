@@ -1,4 +1,4 @@
-function ImagePopup(props) {
+export default function ImagePopup(props) {
   return (
     <div className={`popup popup_type_image ${props.card._id && 'popup_opened'}`}>
       <div className="popup__container popup__container_type_image">
@@ -11,5 +11,3 @@ function ImagePopup(props) {
     </div>
   );
 }
-
-export default ImagePopup;

@@ -1,13 +1,13 @@
 import React from 'react';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
-function Card({ card, onCardClick, onCardLike, onCardDelete }) {
-  const user = React.useContext(CurrentUserContext);
-  const isOwn = card.owner._id === user._id;
+export default function Card({ card, onCardClick, onCardLike, onCardDelete }) {
+  const currentUser = React.useContext(CurrentUserContext);
+  const isOwn = card.owner._id === currentUser._id;
   const cardRemoveButtonClassName = (
     `card__remove ${isOwn ? 'card__remove_visible' : 'card__remove_hidden'}`
   );
-  const isLiked = card.likes.some(i => i._id === user._id);
+  const isLiked = card.likes.some(i => i._id === currentUser._id);
   const cardLikeButtonClassName = (
     `card__like ${isLiked ? 'card__like_active' : ''}`
   );
@@ -38,5 +38,3 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
     </li>
   );
 }
-
-export default Card;

@@ -18,7 +18,7 @@ export class Api {
       .then(this._checkResponse);
   }
 
-  editUserInfo(userData) {
+  setUserInfo(userData) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this._headers,
@@ -30,13 +30,11 @@ export class Api {
       .then(this._checkResponse);
   }
 
-  editUserAvatar(link) {
+  setUserAvatar(avatarData) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
       headers: this._headers,
-      body: JSON.stringify({
-        avatar: link
-      })
+      body: JSON.stringify(avatarData)
     })
       .then(this._checkResponse);
   }
